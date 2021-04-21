@@ -5,7 +5,7 @@ var
 	milliseconds;
 
 
-module.exports = function(time){
+module.exports = function(time = 1000){
 	return new Promise(function(resolve) {
 		milliseconds = new Date().getTime();
 
@@ -13,5 +13,5 @@ module.exports = function(time){
 			timestamp = milliseconds;
 			resolve();
 		} 
-    });
+	});
 }

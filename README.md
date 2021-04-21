@@ -1,80 +1,48 @@
-# grunt-jshint-event-reporter
-> [grunt-jshint-event-reporter](https://github.com/semiromid/grunt-jshint-event-reporter)
-> Calls an error event for [grunt-contrib-jshint](https://github.com/gruntjs/grunt-contrib-jshint)
-> You can make your reporter: [Writing your own JSHint reporter](https://jshint.com/docs/reporters/)
-
-## Getting Started
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+# call-no-more-often-than
+> [npm](https://www.npmjs.com/package/call-no-more-often-than)
+> Call a function or something else no more often than a certain amount of time
 
 ##  Install
+
 ```shell
-npm i grunt-jshint-event-reporter --save-dev
+npm i call-no-more-often-than --save-dev
 ```
 
 ##  Usage
 
-Need to set to jshint options
 
 ```javascript
-jshint: {
-  options: {
-    reporter: require('grunt-jshint-event-reporter')
-  }
-}
-```
+  const call_no_more_often_than = require('call-no-more-often-than');
 
-```javascript
-grunt.event.on('jshint-error', function(err){
-    console.log(JSON.stringify(err));
-});
+  call_no_more_often_than(3000).then(function(){
+      // Your code that won't execute more often than 3000 milliseconds
+  });
 ```
 
 ## Examples
 
 ```javascript
-module.exports = function(grunt) {
+  const call_no_more_often_than = require('call-no-more-often-than');
 
-  grunt.initConfig({
-      jshint: {
-          options: {
-            reporter: require('grunt-jshint-event-reporter')
-          },
-          before: ['src/js/**/*.js']
-      },
+  test_function();
+  test_function();
 
-      uglify: {
-          all: {
-            files: [{
-              expand: true,
-              cwd: 'src',
-              src: 'js/**/*.js',
-              dest: 'build'
-            }]
-          }
-      },
+  setTimeout(function(){
+    test_function();
+  }, 2000);
 
-      watch: {
-          options: {
-            spawn: false 
-            // It is recommended to disable `false` or not use 'grunt-contrib-watch' 
-            // or perhaps even Grunt. Because it works very very slowly.
-          },
-          js: {
-              files: ['src/**/*.js'],
-              tasks: ['jshint', 'uglify']
-          }      
-      },
-  });
-
-  // Load the plugins (It assumes you already have all of these plugins)
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
-
-  grunt.event.on('jshint-error', function(err){
-      console.log(JSON.stringify(err));
-  });
-}
+  function test_function(){
+    call_no_more_often_than(3000).then(function(){
+      console.log('Called once');
+    });  
+  }
 ```
+
+##  Options
+
+#### time
+
+* Type: `Integer`
+* Default value: `1000`
+
+The number is specified in milliseconds. The time during which the internal code of the function will not be called after the first call. The deviation accuracy can be 10-30 milliseconds.
