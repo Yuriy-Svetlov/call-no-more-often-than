@@ -1,6 +1,8 @@
-# call-no-more-often-than
-> [npm](https://www.npmjs.com/package/call-no-more-often-than)
-> Call a function or something else no more often than a certain amount of time
+# Call-no-more-often-than
+
+[![NPM version](https://img.shields.io/npm/v/call-no-more-often-than.svg)](https://www.npmjs.com/package/call-no-more-often-than)
+
+Call a function or something else no more often than a certain amount of time
 
 ##  Install
 
@@ -40,7 +42,7 @@ npm i call-no-more-often-than --save-dev
 
 ##  Options
 
-#### time
+### time
 
 * Type: `Integer`
 * Default value: `1000`
