@@ -1,6 +1,6 @@
 {
   "name": "call-no-more-often-than",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Call a function or something else no more often than a certain amount of time",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/semiromid/call-no-more-often-than.git"
+    "url": "https://github.com/semiromid/call-no-more-often-than.git"
   },
   "keywords": [
     "call-function",
