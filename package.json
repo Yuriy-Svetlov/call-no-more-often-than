@@ -1,6 +1,6 @@
 {
   "name": "call-no-more-often-than",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Call a function or something else no more often than a certain amount of time",
   "main": "index.js",
   "scripts": {
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/semiromid/call-no-more-often-than.git"
+    "url": "https://github.com/Yuriy-Svetlov/call-no-more-often-than.git"
   },
   "keywords": [
     "call-function",
     "timer",
     "not-more-often"
   ],
-  "author": "semiromid",
+  "author": "Yuriy-Svetlov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/semiromid/call-no-more-often-than/issues"
+    "url": "https://github.com/Yuriy-Svetlov/call-no-more-often-than/issues"
   },
-  "homepage": "https://github.com/semiromid/call-no-more-often-than#readme",
+  "homepage": "https://github.com/Yuriy-Svetlov/call-no-more-often-than#readme",
   "devDependencies": {
     "jest": "^26.6.3"
   }
